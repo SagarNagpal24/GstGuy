@@ -1,0 +1,101 @@
+.home-input-containerGSTForm {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 15%;
+  margin-bottom: var(--dl-space-space-fourunits);
+  flex-direction: column;
+  align-items: center;
+}
+.GStformcontainer{
+ 
+}
+.home-textinput input {
+  flex: 1;
+
+  border-width: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  size: 1150px;
+  margin-left: 100px;
+}
+.home-container1 h1 {
+  margin-bottom: 5px;
+  margin-top: 20px;
+  color: var(--dl-color-grays-gray60);
+  color: grey;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+}
+.gstform_rowitems label {
+  margin-right: 20px;
+  color: var(--dl-color-grays-gray60);
+  color: grey;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  width: 100px;
+  display: inline-block;
+}
+.gstform_rowitems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.home-icon {
+  fill: var(--dl-color-grays-gray40);
+  width: 20px;
+  height: 20px;
+}
+.home-button {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding-top: 20px;
+  white-space: nowrap;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+.home-container1 {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  
+}
+.home-input-containerGSTForm button {
+  margin-top: 20px;
+  height: 1px;
+  margin-bottom: 25px;
+}
+.home-container1 input,
+select {
+  border-style: solid 2px rgb(129, 127, 127);
+  height: 35px;
+
+  width: 250px;
+  color: rgb(129, 127, 127);
+  background-color: var(--dl-color-backgrounds-gray);
+}
+.home-container1 {
+  width: 100%;
+  height: 56px;
+  display: flex;
+justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  padding-top: var(--dl-space-space-unit);
+  border-width: 0px;
+  margin-right: var(--dl-space-space-halfunit);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  border-radius: 32px;
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  padding-bottom: var(--dl-space-space-unit);
+}
