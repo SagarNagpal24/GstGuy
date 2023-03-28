@@ -7,7 +7,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: var(--dl-color-backgrounds-gray);
+  /* background-color: var(--dl-color-backgrounds-gray); */
+   /* background-color: #0D4C92;  */
+   background-color: #fafbfd;
+ 
 }
 .home-main {
   flex: 0 0 auto;
@@ -16,8 +19,12 @@
   align-items: center;
   flex-direction: column;
 }
+.pricingcolor{
+  color:rgb(5, 5, 10);
+}
 .home-max-width {
   align-items: stretch;
+  
 }
 .home-content-container {
   flex: 1;
@@ -27,6 +34,9 @@
   padding-right: var(--dl-space-space-twounits);
   flex-direction: column;
   justify-content: center;
+}
+.home-content-container h1{
+  color: hsl(23, 50%, 3%);
 }
 .home-text {
   width: 90%;
@@ -39,7 +49,7 @@
   flex: 0 0 auto;
   width: 100%;
   display: flex;
-  margin-bottom: var(--dl-space-space-fourunits);
+
   flex-direction: row;
 }
 .home-container1 {
@@ -173,7 +183,7 @@
 }
 .home-text06 {
   text-align: center;
-  margin-bottom: var(--dl-space-space-fourunits);
+  margin-bottom: var(--dl-radius-radius-radius8);
 }
 .home-text08 {
   color: var(--dl-color-backgrounds-primary);
@@ -209,6 +219,7 @@
 }
 .home-text12 {
   margin-bottom: 24px;
+  color: black;
 }
 .home-text14 {
   color: var(--dl-color-backgrounds-primary);
@@ -230,6 +241,8 @@
 }
 .home-text18 {
   margin-bottom: 24px;
+  color: black;
+
 }
 .home-text20 {
   color: var(--dl-color-backgrounds-primary);
@@ -255,6 +268,7 @@
 .home-text24 {
   text-align: center;
   margin-bottom: var(--dl-space-space-threeunits);
+  color: black;
 }
 .home-text26 {
   color: var(--dl-color-backgrounds-primary);
@@ -283,6 +297,7 @@
 .home-text28 {
   text-align: center;
   margin-bottom: var(--dl-space-space-halfunit);
+  color: black;
 }
 .home-text31 {
   color: var(--dl-color-backgrounds-primary);

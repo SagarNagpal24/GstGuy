@@ -8,9 +8,33 @@
   flex-direction: column;
   align-items: center;
 }
-.GStformcontainer{
- 
+.filldesign{
+  color: rgb(253, 126, 76);
+  border-color:rgb(253, 126, 76);
+  background-color: aqua;
+  height: 28px;
+  z-index: 1;
 }
+.fillformdesign{
+  width: 70%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.fillformdesign label{
+  width: 100px;
+  background-color:rgb(255, 254, 254);
+  width: 450px;
+  border:0.5px solid;
+  text-align: center;
+  height: 25px;
+            border-color:rgb(230, 227, 227);
+            padding: 2px;
+}
+
 .home-textinput input {
   flex: 1;
 

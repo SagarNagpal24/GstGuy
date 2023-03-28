@@ -6,6 +6,10 @@ import Navbar from './components/navbar'
 import './style.css'
 import GstForm from './views/GstForm'
 import Home from './views/home'
+import SecondGstForm from './views/SecondGstForm'
+import Faqs from './views/Faqs'
+import Pricing from './views/Pricing'
+import Pricing2 from './views/Pricing'
 
 const App = () => {
   return (<>
@@ -17,6 +21,10 @@ const App = () => {
         <Route element={<Home/>}  path="/" />
         
         <Route element={<GstForm/>}  path="/gstform" />
+        <Route element={<SecondGstForm></SecondGstForm>}  path="/gstform" />
+        <Route element={<Faqs/>}  path="/faqs" />
+        <Route element={<Pricing2/>}  path="/pricing" />
+        
         </Routes>
        
         

@@ -11,7 +11,8 @@
   align-items: stretch;
 }
 .copyright-text {
-  color: var(--dl-color-grays-gray100);
+  /* color: var(--dl-color-grays-gray100); */
+  color: rgb(37, 13, 145);
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -27,6 +28,7 @@
   text-decoration: underline;
 }
 .copyright-text3 {
+  
   font-style: normal;
   font-weight: 300;
 }

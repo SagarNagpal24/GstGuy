@@ -1,5 +1,6 @@
 .navbar-navbar-container {
-  background-color:#F8FCF5;
+  /* background-color:#0D4C92; */
+  background-color: #16346d;
 
   top: 0;
   width: 100%;
@@ -8,7 +9,7 @@
   flex-direction: column;
   justify-content: flex-start;
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   height: 100px;
 }
 .navbar-image {
@@ -47,6 +48,7 @@
 }
 .navbar-primary-btn {
   margin-top: var(--dl-space-space-oneandhalfunits);
+  color: #413543;
 }
 .navbar-social-media {
   flex: 0 0 auto;

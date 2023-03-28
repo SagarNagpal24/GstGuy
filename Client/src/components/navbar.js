@@ -83,8 +83,8 @@ Navbar.defaultProps = {
   image_alt: 'logo',
   image_alt1: 'image',
   text: 'Follow us',
-  PrimaryBtn: 'Get started',
-  PrimaryBtn1: 'Get started',
+  PrimaryBtn: 'GST Registration',
+  PrimaryBtn1: 'GST Registration',
 }
 
 Navbar.propTypes = {

@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin-top: 0;
 }
 .navigation-links-text1 {
   margin-left: var(--dl-space-space-twounits);
@@ -16,6 +17,11 @@
 .navigation-links-text4 {
   margin-left: var(--dl-space-space-twounits);
 }
+.navbar-link{
+  /* color: rgb(233, 228, 228); */
+
+  color:#CAC0B3;
+}
 
 
 
@@ -28,6 +34,7 @@
   .navigation-links-nav {
     align-items: flex-start;
     flex-direction: column;
+    margin-top:0px;
   }
   .navigation-links-text1 {
     margin-left: 0;

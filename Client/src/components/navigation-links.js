@@ -16,20 +16,20 @@ const NavigationLinks = (props) => {
 
       
       <span className="navigation-links-text1 navbar-link">{props.text1}</span>
-      <span className="navigation-links-text2 navbar-link">{props.text2}</span>
+      <Link to="/pricing" className="navigation-links-text2 navbar-link">{props.text2}</Link>
       <span className="navigation-links-text3 navbar-link">{props.text3}</span>
-      <span className="navigation-links-text4 navbar-link">{props.text4}</span>
+      <Link   to="/faqs"  className="navigation-links-text4 navbar-link">{props.text4}</Link>
     </nav>
   )
 }
 
 NavigationLinks.defaultProps = {
-  text2: 'Features',
-  text3: 'Blog',
+  text2:'Pricing' ,
+  text3: "Features",
   rootClassName: '',
-  text4: 'Pricing',
+  text4: "FAQS",
   text: 'Home',
-  text1: 'About',
+  text1: 'Resources',
 }
 
 NavigationLinks.propTypes = {

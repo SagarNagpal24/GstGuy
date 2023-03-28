@@ -1,9 +1,23 @@
+.footerbackground {
+  /* background-color: var(--dl-color-backgrounds-primary); */
+  background-color: var(--dl-color-backgrounds-primary);;
+ width: 100%;
+  z-index: 1;
+}
+
+.footer-link:hover{
+  color: rgb(7, 7, 7);
+}
+.footer-link{
+  color: antiquewhite;
+}
 .footer-footer {
   border-color: rgba(33, 33, 33, 0.1);
   border-width: 1px;
   border-top-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
+
 }
 .footer-max-width {
   justify-content: space-between;
@@ -20,7 +34,8 @@
   margin-bottom: var(--dl-space-space-twounits);
 }
 .footer-text {
-  color: var(--dl-color-grays-gray100);
+  /* color: var(--dl-color-grays-gray100); */
+  color: antiquewhite;
   max-width: 350px;
   margin-bottom: 60px;
 }
@@ -49,7 +64,8 @@
   margin-right: var(--dl-space-space-twounits);
 }
 .footer-icon:hover {
-  fill: var(--dl-color-backgrounds-primary);
+  /* fill: var(--dl-color-backgrounds-primary); */
+  fill:antiquewhite;
   cursor: pointer;
 }
 .footer-icon04 {
@@ -59,7 +75,8 @@
   margin-right: var(--dl-space-space-twounits);
 }
 .footer-icon04:hover {
-  fill: var(--dl-color-backgrounds-primary);
+  /* fill: var(--dl-color-backgrounds-primary); */
+  fill:antiquewhite;
   cursor: pointer;
 }
 .footer-icon08 {
@@ -69,7 +86,8 @@
   margin-right: var(--dl-space-space-twounits);
 }
 .footer-icon08:hover {
-  fill: var(--dl-color-backgrounds-primary);
+  /* fill: var(--dl-color-backgrounds-primary); */
+  fill:antiquewhite;
   cursor: pointer;
 }
 .footer-icon10 {
@@ -78,7 +96,8 @@
   transition: 0.3s;
 }
 .footer-icon10:hover {
-  fill: var(--dl-color-backgrounds-primary);
+  /* fill: var(--dl-color-backgrounds-primary); */
+  fill:antiquewhite;
   cursor: pointer;
 }
 .footer-links {
@@ -120,7 +139,7 @@
 .footer-text13 {
   margin-bottom: 0px;
 }
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   .footer-max-width {
     flex-direction: column-reverse;
   }
@@ -132,9 +151,10 @@
     margin-bottom: var(--dl-space-space-threeunits);
   }
 }
-@media(max-width: 479px) {
+@media (max-width: 479px) {
   .footer-links {
     flex-wrap: wrap;
+   
   }
   .footer-container2 {
     width: 100%;
@@ -149,4 +169,6 @@
   .footer-text08 {
     margin-bottom: var(--dl-space-space-twounits);
   }
+
+
 }

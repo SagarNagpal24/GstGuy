@@ -9,13 +9,14 @@ import GridCard from "../components/grid-card";
 import Footer from "../components/footer";
 import Copyright from "../components/copyright";
 import "./home.css";
+import Pricing2 from "./Pricing";
 
 const Home = (props) => {
   return (
     <div className="home-container">
       <Helmet>
         <title>GstGuy</title>
-        <meta property="og:title" content="Feedbox mobile app" />
+        <meta property="og:title" content="GST Webapp" />
       </Helmet>
       
       <main className="home-main">
@@ -24,7 +25,7 @@ const Home = (props) => {
             <div className="home-content-container">
               <h1 className="home-text Heading1">
                 <span>
-                  Do you Really need GST?
+                  Do you Really need GST for your 
                   <span
                     dangerouslySetInnerHTML={{
                       __html: " ",
@@ -32,33 +33,35 @@ const Home = (props) => {
                   />
                 </span>
                 <span className="home-text02">
-                  Ask GSTguy
+                Business?
                   <span
                     dangerouslySetInnerHTML={{
                       __html: " ",
                     }}
                   />
+                  
                 </span>
+                <br></br><span>Click below to know</span>
               </h1>
               <div className="home-input-container">
-                <div className="home-container1 input">
+                {/* <div className="home-container1 input">
                   <svg
                     viewBox="0 0 804.5714285714286 1024"
                     className="home-icon"
                   >
                     <path d="M804.571 708.571c0 20.571-9.143 60.571-17.714 79.429-12 28-44 46.286-69.714 60.571-33.714 18.286-68 29.143-106.286 29.143-53.143 0-101.143-21.714-149.714-39.429-34.857-12.571-68.571-28-100-47.429-97.143-60-214.286-177.143-274.286-274.286-19.429-31.429-34.857-65.143-47.429-100-17.714-48.571-39.429-96.571-39.429-149.714 0-38.286 10.857-72.571 29.143-106.286 14.286-25.714 32.571-57.714 60.571-69.714 18.857-8.571 58.857-17.714 79.429-17.714 4 0 8 0 12 1.714 12 4 24.571 32 30.286 43.429 18.286 32.571 36 65.714 54.857 97.714 9.143 14.857 26.286 33.143 26.286 50.857 0 34.857-103.429 85.714-103.429 116.571 0 15.429 14.286 35.429 22.286 49.143 57.714 104 129.714 176 233.714 233.714 13.714 8 33.714 22.286 49.143 22.286 30.857 0 81.714-103.429 116.571-103.429 17.714 0 36 17.143 50.857 26.286 32 18.857 65.143 36.571 97.714 54.857 11.429 5.714 39.429 18.286 43.429 30.286 1.714 4 1.714 8 1.714 12z"></path>
                   </svg>
-                  <input
+                   <input
                     type="text"
                     placeholder="Your phone number..."
                     className="home-textinput input"
-                  />
-                </div>
+                  /> 
+                </div> */}
                 <button className="home-button button-primary button">
-                  Get started
+                  GST Tool
                 </button>
               </div>
-              <div className="home-features-container">
+              {/* <div className="home-features-container">
                 <div className="home-feature">
                   <svg
                     viewBox="0 0 877.7142857142857 1024"
@@ -92,7 +95,7 @@ const Home = (props) => {
                     Over 2000, highly recommended customer reviews.
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="home-image-container">
               <img
@@ -103,42 +106,32 @@ const Home = (props) => {
             </div>
           </div>
         </div>
-        <div className="home-section-one section-container">
-          <div className="home-max-width1 max-content-container">
-            <h2 className="home-text06 Heading2">
+        {/* <div className="home-section-one section-container">
+          <div className="home-max-width1 max-content-container"> */}
+            {/* <h2 className="home-text06 Heading2">
               <span>
-                Read
+                
                 <span
                   dangerouslySetInnerHTML={{
                     __html: " ",
                   }}
                 />
               </span>
-              <span className="home-text08">Pricing</span>
+              <span className="home-text08">Pricing</span> 
               <span> and</span>
               <br></br>
-              <span>Pricing</span>
-            </h2>
-            <div className="home-cards-container">
+               <span className="pricingcolor">Pricing</span> 
+            </h2> */}
+            
+            <Pricing2></Pricing2>
+            {/* <div className="home-cards-container">
               <FeatureCard image_src="/playground_assets/stars-200h.png"></FeatureCard>
-              <FeatureCard
-                text1="See how &gt;"
-                heading="Follow favorite topics"
-                image_src="/playground_assets/hearth-200h.png"
-              ></FeatureCard>
-              <FeatureCard
-                text1="Learn more &gt;"
-                heading="Read your emails"
-                image_src="/playground_assets/mail-200h.png"
-              ></FeatureCard>
-              <FeatureCard
-                text1="Learn more &gt;"
-                heading="Read newspapers"
-                image_src="/playground_assets/paper-200h.png"
-              ></FeatureCard>
-            </div>
-          </div>
-        </div>
+             
+             
+            </div> */}
+
+          {/* </div>
+        </div> */}
         <div className="section-container">
           <div className="home-max-width2 max-content-container">
             <div className="home-image-container1">
@@ -247,18 +240,18 @@ const Home = (props) => {
                     }}
                   />
                 </span>
-                <span className="home-text31">Feedbox.</span>
+                <span className="home-text31">GSTguy.</span>
               </h2>
-              <span className="Content-Light">
+              {/* <span className="Content-Light">
                 <span>
                   Go to App Store, install Feedbox and start changing your
                   reading habits to
                 </span>
                 <span className="home-text34"></span>
                 <span>day!</span>
-              </span>
+              </span> */}
             </div>
-            <div className="home-get-the-app">
+            {/* <div className="home-get-the-app">
               <img
                 alt="image"
                 src="/playground_assets/frame-1200w.png"
@@ -269,8 +262,8 @@ const Home = (props) => {
                 src="/playground_assets/frame%2034-200h.png"
                 className="home-image4"
               />
-            </div>
-            <div className="home-cards-container1">
+            </div> */}
+            {/* <div className="home-cards-container1">
               <GridCard image_src="/playground_assets/vector%203-200h.png"></GridCard>
               <GridCard
                 text="Follow your friends"
@@ -284,10 +277,10 @@ const Home = (props) => {
                 text="Less apps, more space"
                 image_src="/playground_assets/vector%203%20%5B3%5D-200h.png"
               ></GridCard>
-            </div>
+            </div> */}
           </div>
         </div>
-        <div className="home-section-six section-container">
+        {/* <div className="home-section-six section-container">
           <div className="home-max-width6 max-content-container">
             <div className="home-content-container3">
               <h1 className="home-text36 Heading2">
@@ -361,7 +354,7 @@ const Home = (props) => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
       <Footer></Footer>
       <Copyright></Copyright>

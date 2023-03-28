@@ -29,7 +29,10 @@
   --dl-space-space-threeunits: 48px;
   --dl-color-backgrounds-green: #2b584dff;
   --dl-color-backgrounds-purple: #623373ff;
-  --dl-color-backgrounds-primary: #fa7930ff;
+   /* --dl-color-backgrounds-primary: #fa7930ff;  */
+   --dl-color-backgrounds-primary: hsl(22, 85%, 48%); 
+   
+
   --dl-color-backgrounds-darkblue: #364570ff;
   --dl-space-space-oneandhalfunits: 24px;
   --dl-color-backgrounds-lightgreen: #9cbec6ff;
@@ -144,9 +147,9 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: var(--dl-space-space-fiveunits);
+  padding-top: var(--dl-space-space-unit); 
   flex-direction: column;
-  padding-bottom: var(--dl-space-space-fiveunits);
+   padding-bottom: var(--dl-space-space-unit); 
 }
 .slide-active {
   display: flex !important;
