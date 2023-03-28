@@ -8,11 +8,11 @@ const Footer = (props) => {
       <footer className="footer-footer section-container">
         <div className="footer-max-width max-content-container">
           <div className="footer-container">
-            {/* <img
+            <img
             alt="image"
-            src="/playground_assets/logo-200h.png"
+            src="/playground_assets/white-logo.png"
             className="footer-image"
-          /> */}
+          />
             <span className="footer-text Content-Light">
              One stop platform for all your GST queries and issues.
             </span>
