@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Navbar from "../components/navbar";
@@ -18,14 +18,14 @@ const Home = (props) => {
         <title>GstGuy</title>
         <meta property="og:title" content="GST Webapp" />
       </Helmet>
-      
+
       <main className="home-main">
         <div className="section-container">
           <div className="home-max-width max-content-container">
             <div className="home-content-container">
               <h1 className="home-text Heading1">
                 <span>
-                  Do you Really need GST for your 
+                  Do you Really need GST for your
                   <span
                     dangerouslySetInnerHTML={{
                       __html: " ",
@@ -33,15 +33,15 @@ const Home = (props) => {
                   />
                 </span>
                 <span className="home-text02">
-                Business?
+                  Business?
                   <span
                     dangerouslySetInnerHTML={{
                       __html: " ",
                     }}
                   />
-                  
                 </span>
-                <br></br><span>Click below to know</span>
+                <br></br>
+                <span>Click below to know</span>
               </h1>
               <div className="home-input-container">
                 {/* <div className="home-container1 input">
@@ -57,9 +57,16 @@ const Home = (props) => {
                     className="home-textinput input"
                   /> 
                 </div> */}
-                <button className="home-button button-primary button">
+                {/* <button className="home-button button-primary button">
                   GST Tool
-                </button>
+                </button> */}
+                <Link
+                  className="home-button button-primary button"
+                  to="/gsttool"
+                >
+                  {" "}
+                  GST Tool
+                </Link>
               </div>
               {/* <div className="home-features-container">
                 <div className="home-feature">
@@ -98,17 +105,19 @@ const Home = (props) => {
               </div> */}
             </div>
             <div className="home-image-container">
-              <img
+              {/* <img
                 alt="image"
                 src="/playground_assets/hero%20image-1200w.png"
                 className="home-image"
-              />
+              /> */}
+
+              <video className="home-image" controls autoPlay src="/playground_assets/Hero-Video.mp4" />
             </div>
           </div>
         </div>
         {/* <div className="home-section-one section-container">
           <div className="home-max-width1 max-content-container"> */}
-            {/* <h2 className="home-text06 Heading2">
+        {/* <h2 className="home-text06 Heading2">
               <span>
                 
                 <span
@@ -122,22 +131,24 @@ const Home = (props) => {
               <br></br>
                <span className="pricingcolor">Pricing</span> 
             </h2> */}
-            
-            <Pricing2></Pricing2>
-            {/* <div className="home-cards-container">
+
+        <Pricing2></Pricing2>
+        {/* <div className="home-cards-container">
               <FeatureCard image_src="/playground_assets/stars-200h.png"></FeatureCard>
              
              
             </div> */}
 
-          {/* </div>
+        {/* </div>
         </div> */}
         <div className="section-container">
           <div className="home-max-width2 max-content-container">
             <div className="home-image-container1">
               <img
                 alt="image"
-                src="/playground_assets/section-image1-1200w.png"
+                // src="/playground_assets/section-image1-1200w.png"
+                src="/playground_assets/Articles.svg"
+
                 className="home-image1"
               />
             </div>
@@ -192,7 +203,8 @@ const Home = (props) => {
             <div className="home-image-container2">
               <img
                 alt="image"
-                src="/playground_assets/section-image2-1200w.png"
+                // src="/playground_assets/section-image2-1200w.png"
+                src="/playground_assets/Latest-Updates.svg"
                 className="home-image2"
               />
             </div>
