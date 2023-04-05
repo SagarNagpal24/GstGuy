@@ -1,8 +1,18 @@
-import { bool } from "prop-types";
 import React, { useState, useRef, useEffect } from "react";
 import "./GSTTool.css";
 const GSTTool = () => {
   const questions = [
+    {
+        questionText: "Supply of Goods or services or both?",
+        answerOptions: [
+          {
+            answerText: "Goods",
+            isGoods: true,
+          },
+          { answerText: "Services", isServices: true },
+          { answerText: "Both", isBoth: true },
+        ],
+      },
     {
       questionText: "State in which business is Started?",
       answerOptions: [
@@ -91,8 +101,6 @@ const GSTTool = () => {
     nonresidenttaxable,
     TDSDeductor
   ) => {
-   
-
     // isStateM4,
     // isLimit10,
     // isSupplyWithinstate,
@@ -112,13 +120,14 @@ const GSTTool = () => {
     if (isLimit10 === true) {
       setlimitStatus(1);
     }
-    if ((StateStatus === 1) & (limitStatus === 1)) {
+    if (
+      (isStateM4 === true && isLimit10 === true) ||
+      isSupplyWithinstate === true
+    ) {
       setgstState(0);
     } else {
       setgstState(1);
     }
-
-  
 
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
