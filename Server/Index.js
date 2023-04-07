@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 
 //const GSTformModel = require("./Models/GstForm-data");
 const GstFormdatarouter = require("./Routes/Gstform-route");
@@ -17,12 +18,15 @@ mongoose.connect(
   }
 );
 
+app.use("/static", express.static(path.join(__dirname, "build/static")));
 
-
+app.get("/*", (req, res) => {
+   res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.use(GstFormdatarouter);
 
 
-app.listen(3003, () => {
+app.listen(3000, () => {
   console.log("connection done on 3003 port");
 });
