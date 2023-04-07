@@ -31,7 +31,7 @@ const GstForm = () => {
       constitution === ""
         ? alert("Please select constitution")
         : (
-          axios.post("http://localhost:3003/Gstforminsert", {
+          axios.post("/Gstforminsert", {
             constitution: constitution,
             cin: cin,
             proposedname: proposedname,
