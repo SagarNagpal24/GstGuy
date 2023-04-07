@@ -218,7 +218,7 @@ const Faqs = () => {
                     <div className="col-md-8 mt-2">
                         <div className="card">
                             <div className="card-body">
-                              <h4 className="form-heading mb-4 text-primary text-center mt-3">FAQ's</h4>
+                              <h4 className="form-heading mb-4 text-primary text-center mt-3">FAQS</h4>
                                 {faqs.map((faq, index) => {
                                      return (
                                             <Accordion key={index} active={active} handleToggle={handleToggle} faq={faq} />
