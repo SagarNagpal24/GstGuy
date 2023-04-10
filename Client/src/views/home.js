@@ -1,4 +1,5 @@
 import React from "react";
+import video from  "../playground_assets/Hero-Video.mp4"
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -65,7 +66,7 @@ const Home = (props) => {
                   to="/gsttool"
                 >
                   {" "}
-                  GST Tool
+                  GST Tool 
                 </Link>
               </div>
               {/* <div className="home-features-container">
@@ -111,7 +112,7 @@ const Home = (props) => {
                 className="home-image"
               /> */}
 
-              <video className="home-image" controls autoPlay src="/playground_assets/Hero-Video.mp4" />
+                <video className="home-image" controls autoPlay src={video} />
             </div>
           </div>
         </div>

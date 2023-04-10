@@ -3,14 +3,14 @@ import "./GSTTool.css";
 const GSTTool = () => {
   const questions = [
     {
-        questionText: "Supply of Goods or services or both?",
+        questionText: "Whether Supply consist of Goods or Service or Both?",
         answerOptions: [
           {
             answerText: "Goods",
             isGoods: true,
           },
-          { answerText: "Services", isServices: true },
-          { answerText: "Both", isBoth: true },
+          { answerText: "Services or Both", isServices: true },
+          
         ],
       },
     {
@@ -20,6 +20,8 @@ const GSTTool = () => {
           answerText: "Manipur, Mizoram, Nagaland and Tripura",
           isStateM4: true,
         },
+        { answerText: "Arunachal Pradesh, Assam, Himachal Pradesh, Meghalaya, Sikkim, Uttarakhand  and Telangana", isStateM4: false },
+         
         { answerText: "Other states", isStateM4: false },
       ],
     },
