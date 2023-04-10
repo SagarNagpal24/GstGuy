@@ -13,7 +13,7 @@ const Navbar = (props) => {
       <header data-role="Header" className="navigation-container">
         <img
           alt={props.image_alt}
-          src={props.image_src}
+          src=""
           className="navbar-image"
         />
         <div className="navbar-nav">
@@ -78,10 +78,10 @@ const Navbar = (props) => {
 
 Navbar.defaultProps = {
   image_src: '',
-  image_src: '/playground_assets/logo1.png',
-  image_src1: '/playground_assets/color-logo1.png',
-  image_alt: 'logo',
-  image_alt1: 'image',
+  image_src: "/Client/public/playground_assets/logo1.png",
+  image_src1: "/Client/public/playground_assets/logo1.png",
+  image_alt: 'gstguy',
+  image_alt1: 'gstguy',
   text: 'Follow us',
   PrimaryBtn: 'GST Registration',
   PrimaryBtn1: 'GST Registration',
