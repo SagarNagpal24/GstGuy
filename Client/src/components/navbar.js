@@ -1,5 +1,5 @@
 import React from 'react'
-
+import logo from "../playground_assets/logo1.png"
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -13,7 +13,7 @@ const Navbar = (props) => {
       <header data-role="Header" className="navigation-container">
         <img
           alt={props.image_alt}
-          src=""
+          src={logo}
           className="navbar-image"
         />
         <div className="navbar-nav">

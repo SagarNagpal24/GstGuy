@@ -3,54 +3,48 @@ import "./GSTTool.css";
 const GSTTool = () => {
   const questions = [
     {
-        questionText: "Whether Supply consist of Goods or Service or Both?",
-        answerOptions: [
-          {
-            answerText: "Goods",
-            isGoods: true,
-          },
-          { answerText: "Services or Both", isServices: true },
-          
-        ],
-      },
+      questionText: "Whether expected/aggregated Turnover for the Year?",
+      answerOptions: [
+        {
+          answerText: "upto Rs.10 Lakh",
+          isStateM4: true,
+        },
+        { answerText: "upto Rs.20 Lakh", isStateM4: false },
+
+        { answerText: "upto Rs.40 Lakh", isStateM4: false },
+      ],
+    },
     {
       questionText: "State in which business is Started?",
       answerOptions: [
         {
           answerText: "Manipur, Mizoram, Nagaland and Tripura",
-          isStateM4: true,
+          isLimit10: true,
         },
-        { answerText: "Arunachal Pradesh, Assam, Himachal Pradesh, Meghalaya, Sikkim, Uttarakhand  and Telangana", isStateM4: false },
-         
-        { answerText: "Other states", isStateM4: false },
+        {
+          answerText:
+            "Arunachal Pradesh, Assam, Himachal Pradesh, Meghalaya, Sikkim, Uttarakhand  and Telangana",
+          isLimit10: false,
+        },
+        { answerText: "Others", isLimit10: false },
       ],
     },
     {
-      questionText: "What is your turnover limit?",
-      answerOptions: [
-        { answerText: "Upto 10 lakhs", isLimit10: true },
-        { answerText: "Above 10 lakhs", isLimit10: false },
-      ],
-    },
-    {
-      questionText: "Whether Supply is within state or Outside state?",
+      questionText: "Whether Supply of Goods or Service exclusively in",
       answerOptions: [
         {
-          answerText: "Within State",
+          answerText: "Taxable or Both",
 
           isSupplyWithinstate: true,
         },
-        { answerText: "Outside State", isSupplyWithinstate: false },
-        { answerText: "Both", issupplyBothstate: true },
+        { answerText: "Exempt", isSupplyWithinstate: false },
       ],
     },
     {
-      questionText: "Whether Supply of Goods or Service exclusively in?",
+      questionText: "Whether Supply is Outside state?",
       answerOptions: [
-        { answerText: "Non GST Supply", isnonGSTSupply: true },
-        { answerText: "Exempt Supply/ Nil Rated Supply", isExemptSupply: true },
-        { answerText: "Taxable", isTaxable: true },
-        { answerText: "All of the Above", isALLtax: true },
+        { answerText: "Yes", isnonGSTSupply: true },
+        { answerText: "No", isExemptSupply: true },
       ],
     },
     {

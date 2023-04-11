@@ -1,29 +1,30 @@
 import React from "react";
-import"./Pricing.css";
-const Pricing =()=>{
-    return(<>
-     <h1 className="Heading">Compliance Pricing</h1>
-<div className="main">
-   
-    <table className="price-table">
-        <tbody>
+import "./Pricing.css";
+const Pricing = () => {
+  return (
+    <div>
+      <h1 className="Heading">Compliance Pricing</h1>
+      <div className="main">
+        <table className="price-table">
+          <tbody>
             <tr>
-                <td ></td>
-                <td ></td>
-                <td className="price-table-popular">Most popular</td>
-                {/* <td className="price-blank"></td> */}
+              <td></td>
+              <td></td>
+              <td className="price-table-popular">Most popular</td>
+              {/* <td className="price-blank"></td> */}
             </tr>
             <tr className="price-table-head">
-                <td></td>
-                <td>
-                    Free
-                    <br></br><small className="small-design" >₹0/- per year</small>
-                </td>
-                <td>
-                    Standard Plan
-                    <br></br> <small  className="small-design">₹6000/- per year</small>
-                </td>
-
+              <td></td>
+              <td>
+                Free
+                <br></br>
+                <small className="small-design">₹0/- per year</small>
+              </td>
+              <td>
+                Standard Plan
+                <br></br>{" "}
+                <small className="small-design">₹6000/- per year</small>
+              </td>
             </tr>
             {/* <tr>
                 <td></td>
@@ -69,28 +70,44 @@ const Pricing =()=>{
                 <td>180 Days</td>
             </tr> */}
             <tr>
-                <td>GST Tool*</td>
-                <td><i className="fas fa-check"></i></td>
-                <td><i className="fas fa-check"></i></td>
-                {/* <td><i className="fas fa-check"></i></td> */}
+              <td>GST Tool*</td>
+              <td>
+                <i className="fas fa-check"></i>
+              </td>
+              <td>
+                <i className="fas fa-check"></i>
+              </td>
+              {/* <td><i className="fas fa-check"></i></td> */}
             </tr>
             <tr>
-                <td> GST Registration</td>
-                <td><i className="fas fa-times"></i></td>
-                <td><i className="fas fa-check"></i></td>
-                {/* <td><i className="fas fa-check"></i></td> */}
+              <td> GST Registration</td>
+              <td>
+                <i className="fas fa-times"></i>
+              </td>
+              <td>
+                <i className="fas fa-check"></i>
+              </td>
+              {/* <td><i className="fas fa-check"></i></td> */}
             </tr>
             <tr>
-                <td>GST Return Monthly and Quarterly**</td>
-                <td><i className="fas fa-times"></i></td>
-                <td><i className="fas fa-check"></i></td>
-                {/* <td><i className="fas fa-check"></i></td> */}
+              <td>GST Return Monthly and Quarterly**</td>
+              <td>
+                <i className="fas fa-times"></i>
+              </td>
+              <td>
+                <i className="fas fa-check"></i>
+              </td>
+              {/* <td><i className="fas fa-check"></i></td> */}
             </tr>
             <tr>
-                <td>GST Annual Return</td>
-                <td><i className="fas fa-times"></i></td>
-                <td><i className="fas fa-check"></i></td>
-                {/* <td><i className="fas fa-check"></i></td> */}
+              <td>GST Annual Return</td>
+              <td>
+                <i className="fas fa-times"></i>
+              </td>
+              <td>
+                <i className="fas fa-check"></i>
+              </td>
+              {/* <td><i className="fas fa-check"></i></td> */}
             </tr>
             {/* <tr>
                 <td><a href="#wordpress-security-audit" className="price-table-help"><i className="far fa-fw fa-question-circle"></i></a> On-Demand Audit</td>
@@ -122,15 +139,11 @@ const Pricing =()=>{
                     <a href="#">Get started</a>
                 </td>
             </tr> */}
-        </tbody>
-    </table>
-</div>
-
-
-    
-    </>
-       
-    )
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
- export default Pricing;
+export default Pricing;

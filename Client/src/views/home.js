@@ -1,5 +1,8 @@
 import React from "react";
-import video from  "../playground_assets/Hero-Video.mp4"
+import video from "../playground_assets/hero-video1.mp4";
+import articlesimage from "../playground_assets/Articles.svg";
+import latestupdatesimage from "../playground_assets/Latest-Updates.svg";
+import faqsimage from "../playground_assets/faqs.svg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -10,7 +13,6 @@ import GridCard from "../components/grid-card";
 import Footer from "../components/footer";
 import Copyright from "../components/copyright";
 import "./home.css";
-import Pricing2 from "./Pricing";
 
 const Home = (props) => {
   return (
@@ -63,10 +65,10 @@ const Home = (props) => {
                 </button> */}
                 <Link
                   className="home-button button-primary button"
-                  to="/gsttool"
+                  to="/gstchoice"
                 >
                   {" "}
-                  GST Tool 
+                  GST Tool
                 </Link>
               </div>
               {/* <div className="home-features-container">
@@ -112,7 +114,7 @@ const Home = (props) => {
                 className="home-image"
               /> */}
 
-                <video className="home-image" controls autoPlay src={video} />
+              <video className="home-image" controls autoPlay src={video} />
             </div>
           </div>
         </div>
@@ -133,7 +135,6 @@ const Home = (props) => {
                <span className="pricingcolor">Pricing</span> 
             </h2> */}
 
-        <Pricing2></Pricing2>
         {/* <div className="home-cards-container">
               <FeatureCard image_src="/playground_assets/stars-200h.png"></FeatureCard>
              
@@ -148,8 +149,7 @@ const Home = (props) => {
               <img
                 alt="image"
                 // src="/playground_assets/section-image1-1200w.png"
-                src="/playground_assets/Articles.svg"
-
+                src={articlesimage}
                 className="home-image1"
               />
             </div>
@@ -205,9 +205,43 @@ const Home = (props) => {
               <img
                 alt="image"
                 // src="/playground_assets/section-image2-1200w.png"
-                src="/playground_assets/Latest-Updates.svg"
+                src={latestupdatesimage}
                 className="home-image2"
               />
+            </div>
+          </div>
+        </div>
+        <div className="section-container">
+          <div className="home-max-width2 max-content-container">
+            <div className="home-image-container1">
+              <img
+                alt="image"
+                // src="/playground_assets/section-image1-1200w.png"
+                src={faqsimage}
+                className="home-image1"
+              />
+            </div>
+            <div className="home-content-container1">
+              <h1 className="home-text12 Heading2">
+                <span>
+                  Answer to your every query asked
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: " ",
+                    }}
+                  />
+                </span>
+                <span className="home-text14">FAQS</span>
+              </h1>
+              <span className="home-text15 Content-Light">
+                <span>
+                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                  amet sint. Velit officia consequat duis enim velit mollit.
+                  Velit officia consequat duis enim velit mollit.
+                </span>
+                <br></br>
+                <span>Lorem ipsum dolor sit amet.</span>
+              </span>
             </div>
           </div>
         </div>

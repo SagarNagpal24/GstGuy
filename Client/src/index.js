@@ -11,6 +11,8 @@ import Faqs from './views/Faqs'
 import Pricing from './views/Pricing'
 import Pricing2 from './views/Pricing'
 import GSTTool from './views/GSTTool'
+import Gstchoice from './views/Gstchoice'
+import GstToolServices from './views/GstToolServices'
 
 const App = () => {
   return (<>
@@ -26,6 +28,8 @@ const App = () => {
         <Route element={<Faqs/>}  path="/faqs" />
         <Route element={<Pricing2/>}  path="/pricing" />
         <Route element={<GSTTool/>}  path="/gsttool" />
+        <Route element={<GstToolServices/>}  path="/gsttool1" />
+        <Route element={<Gstchoice/>}  path="/gstchoice" />
         
         </Routes>
        
