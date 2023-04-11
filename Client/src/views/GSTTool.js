@@ -1,17 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./GSTTool.css";
-const GSTTool = () => {
+const GSTTool = () => 
+{
   const questions = [
     {
       questionText: "Whether expected/aggregated Turnover for the Year?",
       answerOptions: [
         {
           answerText: "upto Rs.10 Lakh",
-          isStateM4: true,
+          isLimit10: true,
         },
-        { answerText: "upto Rs.20 Lakh", isStateM4: false },
+        { answerText: "upto Rs.20 Lakh", isLimit20: true },
 
-        { answerText: "upto Rs.40 Lakh", isStateM4: false },
+        { answerText: "upto Rs.40 Lakh", isLimit40: true },
       ],
     },
     {
@@ -19,32 +20,30 @@ const GSTTool = () => {
       answerOptions: [
         {
           answerText: "Manipur, Mizoram, Nagaland and Tripura",
-          isLimit10: true,
+          isStateM4: true,
         },
         {
           answerText:
             "Arunachal Pradesh, Assam, Himachal Pradesh, Meghalaya, Sikkim, Uttarakhand  and Telangana",
-          isLimit10: false,
+            isStateM7: true,
         },
-        { answerText: "Others", isLimit10: false },
+        { answerText: "Others", isStateothers: true },
       ],
     },
     {
       questionText: "Whether Supply of Goods or Service exclusively in",
       answerOptions: [
         {
-          answerText: "Taxable or Both",
-
-          isSupplyWithinstate: true,
+          answerText: "Taxable or Both",issupplytaxable: true,
         },
-        { answerText: "Exempt", isSupplyWithinstate: false },
+        { answerText: "Exempt", issupplytaxable: false },
       ],
     },
     {
       questionText: "Whether Supply is Outside state?",
       answerOptions: [
-        { answerText: "Yes", isnonGSTSupply: true },
-        { answerText: "No", isExemptSupply: true },
+        { answerText: "Yes", isSupplyWithinstate: true },
+        { answerText: "No", isSupplyWithinstate: false },
       ],
     },
     {
@@ -52,7 +51,7 @@ const GSTTool = () => {
         "Whether Supply of Service is Through E- commerce Operator Or Pay GST as E-commerce Operator?",
       answerOptions: [
         { answerText: "Yes", throughEcommerceOperator: true },
-        { answerText: "No", throughEcommerceOperator: true },
+        { answerText: "No", throughEcommerceOperator: false },
       ],
     },
     {
@@ -74,10 +73,26 @@ const GSTTool = () => {
     },
   ];
 
-  const [StateStatus, setStateStatus] = React.useState(0);
+  //conditions for Gst Tool
+  const [StateM4Status, setStateM4Status] = React.useState(0);
 
-  const [limitStatus, setlimitStatus] = React.useState(0);
+  const [limit10Status, setlimit10Status] = React.useState(0);
 
+  const [StateM7Status, setStateM7Status] = React.useState(0);
+  const [StateotherStatus, setStateotherStatus] = React.useState(0);
+
+  const [limit20Status, setlimit20Status] = React.useState(0);
+  const [limit40Status, setlimit40Status] = React.useState(0);
+
+  const [supplytaxablestatus, setsupplytaxablestatus] = React.useState(0);
+  const [SupplyWithinstatestatus, setSupplyWithinstatestatus] = React.useState(0);
+  const [throughEcommerceOperatorstatus, setthroughEcommerceOperatorstatus] = React.useState(0);
+  const [nonresidenttaxablestatus, setnonresidenttaxablestatus] = React.useState(0);
+  const [TDSDeductorstatus, setTDSDeductorstatus] = React.useState(0);
+  
+
+
+  //---------------------------------------------------------
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
 
   const [showScore, setShowScore] = React.useState(false);
@@ -86,13 +101,13 @@ const GSTTool = () => {
   const [score, setScore] = React.useState(0);
   const handleAnswerButtonClick = (
     isStateM4,
+    isStateM7,
+    isStateothers,
     isLimit10,
+    isLimit20,
+    isLimit40,
     isSupplyWithinstate,
-    issupplyBothstate,
-    isnonGSTSupply,
-    isExemptSupply,
-    isTaxable,
-    isALLtax,
+    issupplytaxable,
     throughEcommerceOperator,
     nonresidenttaxable,
     TDSDeductor
@@ -109,22 +124,141 @@ const GSTTool = () => {
     // nonresidenttaxable,
     // TDSDeductor
 
+    //----------------------if else for gst tool
     if (isStateM4 === true) {
-      setStateStatus(1);
+      setStateM4Status(1);
     }
+    else{
+      setStateM4Status(0);
+    }
+    if (isStateM7 === true) {
+      setStateM7Status(1);
+    }
+    else{
+      setStateM7Status(0);
+    }
+    if (isStateothers === true) {
+      setStateotherStatus(1);
+    }
+    else{
+      setStateotherStatus(0);
+    }
+
 
     if (isLimit10 === true) {
-      setlimitStatus(1);
+      setlimit10Status(1);
     }
-    if (
-      (isStateM4 === true && isLimit10 === true) ||
-      isSupplyWithinstate === true
-    ) {
-      setgstState(0);
-    } else {
-      setgstState(1);
+    else {
+      setlimit10Status(0);
+    }
+    if (isLimit20 === true) {
+      setlimit20Status(1);
+    }
+    else {
+      setlimit20Status(0);
+    }
+    if (isLimit40 === true) {
+      setlimit40Status(1);
+    }
+    else {
+      setlimit40Status(0);
+    }
+    if(issupplytaxable ===true)
+    {
+      setsupplytaxablestatus(1)
+    }
+    else {
+      setsupplytaxablestatus(0);
+    }
+    if(isSupplyWithinstate ===true)
+    {
+      setSupplyWithinstatestatus(1)
+    }
+    else {
+      setSupplyWithinstatestatus(0);
+    }
+    if(throughEcommerceOperator ===true)
+    {
+      setthroughEcommerceOperatorstatus(1)
+    }
+    else {
+      setthroughEcommerceOperatorstatus(0);
+    }
+    if(nonresidenttaxable ===true)
+    {
+      setnonresidenttaxablestatus(1)
+    }
+    else {
+      setnonresidenttaxablestatus(0);
+    }
+    if(TDSDeductor ===true)
+    {
+      setTDSDeductorstatus(1)
+    }
+    else {
+      setTDSDeductorstatus(0);
     }
 
+
+    // if (
+    //   (isStateM4 === true && isLimit10 === true) ||
+    //   isSupplyWithinstate === true
+    // ) {
+    //   setgstState(0);
+    // } else {
+    //   setgstState(1);
+    // }
+
+    if(StateM4Status===true && limit10Status=== true)
+    {
+      setgstState(1);
+    }
+    else
+      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true
+         && SupplyWithinstatestatus===false)
+      {
+        setgstState(1);
+      }
+    
+    else 
+      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===false )
+      {
+        setgstState(0);
+      }
+      else 
+      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
+        && SupplyWithinstatestatus===false)
+      {
+        setgstState(1);
+      }
+      else 
+      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
+        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===true)
+      {
+        setgstState(1);
+      }
+       if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
+        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false && nonresidenttaxablestatus===true)
+      {
+        setgstState(1);
+      }
+       if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
+        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false 
+        && nonresidenttaxablestatus===false && TDSDeductorstatus===true)
+      {
+        setgstState(1);
+      }
+       if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
+        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false 
+        && nonresidenttaxablestatus===false && TDSDeductorstatus===false)
+      {
+        setgstState(0);
+      }
+
+    
+    
+
+     // --------------------------------
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
@@ -157,13 +291,16 @@ const GSTTool = () => {
                 onClick={() =>
                   handleAnswerButtonClick(
                     answerOption.isStateM4,
+                    answerOption.isStateM7,
+                    answerOption.isStateothers,
                     answerOption.isLimit10,
+                    answerOption.isLimit20,
+                    answerOption.isLimit40,
                     answerOption.isSupplyWithinstate,
-                    answerOption.issupplyBothstate,
-                    answerOption.isnonGSTSupply,
-                    answerOption.isExemptSupply,
-                    answerOption.isTaxable,
-                    answerOption.isALLtax,
+                    
+                    
+                    answerOption.issupplytaxable,
+                    
                     answerOption.throughEcommerceOperator,
                     answerOption.nonresidenttaxable,
                     answerOption.TDSDeductor
