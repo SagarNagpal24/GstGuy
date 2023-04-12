@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./GSTTool.css";
-const GSTTool = () => 
-{
+const GSTTool = () => {
   const questions = [
     {
       questionText: "Whether expected/aggregated Turnover for the Year?",
@@ -25,7 +24,7 @@ const GSTTool = () =>
         {
           answerText:
             "Arunachal Pradesh, Assam, Himachal Pradesh, Meghalaya, Sikkim, Uttarakhand  and Telangana",
-            isStateM7: true,
+          isStateM7: true,
         },
         { answerText: "Others", isStateothers: true },
       ],
@@ -34,7 +33,8 @@ const GSTTool = () =>
       questionText: "Whether Supply of Goods or Service exclusively in",
       answerOptions: [
         {
-          answerText: "Taxable or Both",issupplytaxable: true,
+          answerText: "Taxable or Both",
+          issupplytaxable: true,
         },
         { answerText: "Exempt", issupplytaxable: false },
       ],
@@ -42,8 +42,8 @@ const GSTTool = () =>
     {
       questionText: "Whether Supply is Outside state?",
       answerOptions: [
-        { answerText: "Yes", isSupplyWithinstate: true },
-        { answerText: "No", isSupplyWithinstate: false },
+        { answerText: "Yes", isSupplyoutsidestate: true },
+        { answerText: "No", isSupplyoutsidestate: false },
       ],
     },
     {
@@ -85,12 +85,13 @@ const GSTTool = () =>
   const [limit40Status, setlimit40Status] = React.useState(0);
 
   const [supplytaxablestatus, setsupplytaxablestatus] = React.useState(0);
-  const [SupplyWithinstatestatus, setSupplyWithinstatestatus] = React.useState(0);
-  const [throughEcommerceOperatorstatus, setthroughEcommerceOperatorstatus] = React.useState(0);
-  const [nonresidenttaxablestatus, setnonresidenttaxablestatus] = React.useState(0);
+  const [Supplyoutsidestatestatus, setSupplyoutsidestatestatus] =
+    React.useState(0);
+  const [throughEcommerceOperatorstatus, setthroughEcommerceOperatorstatus] =
+    React.useState(0);
+  const [nonresidenttaxablestatus, setnonresidenttaxablestatus] =
+    React.useState(0);
   const [TDSDeductorstatus, setTDSDeductorstatus] = React.useState(0);
-  
-
 
   //---------------------------------------------------------
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
@@ -106,7 +107,7 @@ const GSTTool = () =>
     isLimit10,
     isLimit20,
     isLimit40,
-    isSupplyWithinstate,
+    isSupplyoutsidestate,
     issupplytaxable,
     throughEcommerceOperator,
     nonresidenttaxable,
@@ -128,77 +129,37 @@ const GSTTool = () =>
     if (isStateM4 === true) {
       setStateM4Status(1);
     }
-    else{
-      setStateM4Status(0);
-    }
     if (isStateM7 === true) {
       setStateM7Status(1);
-    }
-    else{
-      setStateM7Status(0);
     }
     if (isStateothers === true) {
       setStateotherStatus(1);
     }
-    else{
-      setStateotherStatus(0);
-    }
-
 
     if (isLimit10 === true) {
       setlimit10Status(1);
     }
-    else {
-      setlimit10Status(0);
-    }
     if (isLimit20 === true) {
       setlimit20Status(1);
-    }
-    else {
-      setlimit20Status(0);
     }
     if (isLimit40 === true) {
       setlimit40Status(1);
     }
-    else {
-      setlimit40Status(0);
+    if (issupplytaxable === true) {
+      setsupplytaxablestatus(1);
     }
-    if(issupplytaxable ===true)
-    {
-      setsupplytaxablestatus(1)
+    if (isSupplyoutsidestate === true) {
+      setSupplyoutsidestatestatus(1);
     }
-    else {
-      setsupplytaxablestatus(0);
+    if (throughEcommerceOperator === true) {
+      setthroughEcommerceOperatorstatus(1);
     }
-    if(isSupplyWithinstate ===true)
-    {
-      setSupplyWithinstatestatus(1)
+    if (nonresidenttaxable === true) {
+      setnonresidenttaxablestatus(1);
     }
-    else {
-      setSupplyWithinstatestatus(0);
+    if (TDSDeductor === true) {
+      setTDSDeductorstatus(1);
     }
-    if(throughEcommerceOperator ===true)
-    {
-      setthroughEcommerceOperatorstatus(1)
-    }
-    else {
-      setthroughEcommerceOperatorstatus(0);
-    }
-    if(nonresidenttaxable ===true)
-    {
-      setnonresidenttaxablestatus(1)
-    }
-    else {
-      setnonresidenttaxablestatus(0);
-    }
-    if(TDSDeductor ===true)
-    {
-      setTDSDeductorstatus(1)
-    }
-    else {
-      setTDSDeductorstatus(0);
-    }
-
 
     // if (
     //   (isStateM4 === true && isLimit10 === true) ||
@@ -209,56 +170,118 @@ const GSTTool = () =>
     //   setgstState(1);
     // }
 
-    if(StateM4Status===true && limit10Status=== true)
-    {
-      setgstState(1);
+    if (StateM4Status === 1) {
+      if (
+        limit10Status === 1 ||
+        (limit10Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 1) ||
+       
+        (limit10Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 1) ||
+        (limit10Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 0 &&
+          nonresidenttaxablestatus === 1) ||
+        (limit10Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 0 &&
+          nonresidenttaxablestatus === 0 &&
+          TDSDeductorstatus === 1)
+      ) {
+        setgstState(1);
+      }
     }
-    else
-      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true
-         && SupplyWithinstatestatus===false)
-      {
-        setgstState(1);
-      }
-    
-    else 
-      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===false )
-      {
-        setgstState(0);
-      }
-      else 
-      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
-        && SupplyWithinstatestatus===false)
-      {
-        setgstState(1);
-      }
-      else 
-      if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
-        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===true)
-      {
-        setgstState(1);
-      }
-       if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
-        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false && nonresidenttaxablestatus===true)
-      {
-        setgstState(1);
-      }
-       if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
-        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false 
-        && nonresidenttaxablestatus===false && TDSDeductorstatus===true)
-      {
-        setgstState(1);
-      }
-       if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true 
-        && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false 
-        && nonresidenttaxablestatus===false && TDSDeductorstatus===false)
-      {
-        setgstState(0);
-      }
 
-    
-    
+    if (StateM7Status === 1) {
+      if (
+        limit20Status === 1 ||
+        (limit20Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 1) ||
+       
+        (limit20Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 1) ||
+        (limit20Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 0 &&
+          nonresidenttaxablestatus === 1) ||
+        (limit20Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 0 &&
+          nonresidenttaxablestatus === 0 &&
+          TDSDeductorstatus === 1)
+      ) {
+        setgstState(1);
+      }
+    }
 
-     // --------------------------------
+    if (StateotherStatus === 1) {
+      if (
+        limit40Status === 1 ||
+        (limit40Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 1) ||
+       
+        (limit40Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 1) ||
+        (limit40Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 0 &&
+          nonresidenttaxablestatus === 1) ||
+        (limit40Status === 0 &&
+          supplytaxablestatus === 1 &&
+          Supplyoutsidestatestatus === 0 &&
+          throughEcommerceOperatorstatus === 0 &&
+          nonresidenttaxablestatus === 0 &&
+          TDSDeductorstatus === 1)
+      ) {
+        setgstState(1);
+      }
+    }
+
+    // else
+    //   if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===false )
+    //   {
+    //     setgstState(0);
+    //   }
+    //   else
+    //   if
+    //   {
+    //     setgstState(1);
+    //   }
+    //   else
+    //   if
+    //   {
+    //     setgstState(1);
+    //   }
+    //    if
+    //   {
+    //     setgstState(1);
+    //   }
+    //    if
+    //   {
+    //     setgstState(1);
+    //   }
+    //    if(StateM4Status===true && limit10Status=== false && supplytaxablestatus===true
+    //     && SupplyWithinstatestatus===false && throughEcommerceOperatorstatus===false
+    //     && nonresidenttaxablestatus===false && TDSDeductorstatus===false)
+    //   {
+    //     setgstState(0);
+    //   }
+
+    // --------------------------------
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
@@ -296,11 +319,10 @@ const GSTTool = () =>
                     answerOption.isLimit10,
                     answerOption.isLimit20,
                     answerOption.isLimit40,
-                    answerOption.isSupplyWithinstate,
-                    
-                    
+                    answerOption.isSupplyoutsidestate,
+
                     answerOption.issupplytaxable,
-                    
+
                     answerOption.throughEcommerceOperator,
                     answerOption.nonresidenttaxable,
                     answerOption.TDSDeductor
