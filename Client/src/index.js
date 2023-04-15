@@ -13,9 +13,10 @@ import Pricing2 from './views/Pricing'
 import GSTTool from './views/GSTTool'
 import Gstchoice from './views/Gstchoice'
 import GstToolServices from './views/GstToolServices'
+import Demo from './views/Demo'
 
 const App = () => {
-  return (<>
+  return (<div className='back-image'>  
   
     <Router>
     <Navbar></Navbar>
@@ -30,6 +31,8 @@ const App = () => {
         <Route element={<GSTTool/>}  path="/gsttool" />
         <Route element={<GstToolServices/>}  path="/gsttool1" />
         <Route element={<Gstchoice/>}  path="/gstchoice" />
+        <Route element={<Demo/>}  path="/Demo" />
+
         
         </Routes>
        
@@ -38,7 +41,7 @@ const App = () => {
         
       </div>
     </Router>
-  </>
+  </div>
    
   )
 }

@@ -6,9 +6,9 @@ const GSTToolServices = () => {
     answerOptions: [
       {
         answerText: "upto Rs.10 Lakh",
-        isLimit10: true,
+        isLimit10: false,
       },
-      { answerText: "upto Rs.20 Lakh", isLimit20: true },
+      { answerText: "upto Rs.20 Lakh", isLimit20: false },
        
    
     ],
@@ -95,6 +95,10 @@ const GSTToolServices = () => {
   const [gstState, setgstState] = React.useState(0);
 
   const [score, setScore] = React.useState(0);
+  const HandleRefresh =() => {
+    window.location.reload(true);
+  }  
+
   const handleAnswerButtonClick = (
     isStateM4,
     isStateM7,
@@ -285,7 +289,7 @@ const GSTToolServices = () => {
     }
   };
 
-  return (
+  return (<>
     <div className="app">
       {showScore ? (
         <div className="score-section">
@@ -331,6 +335,11 @@ const GSTToolServices = () => {
         </>
       )}
     </div>
+     <button className="home-button button-primary button" onClick={HandleRefresh}>
+     {" "}
+     Refresh
+   </button>
+   </>
   );
 };
 

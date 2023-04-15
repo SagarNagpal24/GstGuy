@@ -36,6 +36,10 @@
   --dl-color-backgrounds-darkblue: #364570ff;
   --dl-space-space-oneandhalfunits: 24px;
   --dl-color-backgrounds-lightgreen: #9cbec6ff;
+  
+}
+.back-image{
+  background-image: "./playground_assets/home-back.jpg";
 }
 .button {
   color: var(--dl-color-grays-black100);
@@ -219,6 +223,7 @@
   text-decoration: none;
 }
 
+
 @media(max-width: 767px) {
   .navbar-link {
     margin-bottom: var(--dl-space-space-unit);
@@ -238,5 +243,6 @@
     padding-top: var(--dl-space-space-sixunits);
     padding-bottom: var(--dl-space-space-twounits);
   }
+  
 }
 

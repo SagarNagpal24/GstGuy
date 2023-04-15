@@ -15,7 +15,7 @@ const NavigationLinks = (props) => {
         {props.text}
       </Link>
 
-      <span className="navigation-links-text1 navbar-link">{props.text1}</span>
+      <Link to="/Demo" className="navigation-links-text1 navbar-link">{props.text1}</Link>
       <Link to="/pricing" className="navigation-links-text2 navbar-link">
         {props.text2}
       </Link>

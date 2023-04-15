@@ -3,18 +3,6 @@ import "./GSTTool.css";
 const GSTTool = () => {
   const questions = [
     {
-      questionText: "Whether expected/aggregated Turnover for the Year?",
-      answerOptions: [
-        {
-          answerText: "upto Rs.10 Lakh",
-          isLimit10: true,
-        },
-        { answerText: "upto Rs.20 Lakh", isLimit20: true },
-
-        { answerText: "upto Rs.40 Lakh", isLimit40: true },
-      ],
-    },
-    {
       questionText: "State in which business is Started?",
       answerOptions: [
         {
@@ -29,6 +17,19 @@ const GSTTool = () => {
         { answerText: "Others", isStateothers: true },
       ],
     },
+    {
+      questionText: "Whether expected/aggregated Turnover for the Year?",
+      answerOptions: [
+        {
+          answerText: "upto Rs.10 Lakh",
+          isLimit10: false,
+        },
+        { answerText: "upto Rs.20 Lakh", isLimit20: false },
+
+        { answerText: "upto Rs.40 Lakh", isLimit40: false },
+      ],
+    },
+   
     {
       questionText: "Whether Supply of Goods or Service exclusively in",
       answerOptions: [
@@ -100,6 +101,11 @@ const GSTTool = () => {
   const [gstState, setgstState] = React.useState(0);
 
   const [score, setScore] = React.useState(0);
+
+  const HandleRefresh =() => {
+    window.location.reload(true);
+  }  
+
   const handleAnswerButtonClick = (
     isStateM4,
     isStateM7,
@@ -290,8 +296,8 @@ const GSTTool = () => {
     }
   };
 
-  return (
-    <div className="app">
+  return (<>
+  <div className="app">
       {showScore ? (
         <div className="score-section">
           {gstState === 1
@@ -335,7 +341,14 @@ const GSTTool = () => {
           </div>
         </>
       )}
+     
     </div>
+    <button className="home-button button-primary button" onClick={HandleRefresh}>
+          {" "}
+          Refresh
+        </button>
+    </>
+    
   );
 };
 

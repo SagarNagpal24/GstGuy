@@ -12,17 +12,24 @@ import Slide from "../components/slide";
 import GridCard from "../components/grid-card";
 import Footer from "../components/footer";
 import Copyright from "../components/copyright";
+import homeimage from "../playground_assets/home-back.jpg";
 import "./home.css";
 
 const Home = (props) => {
   return (
-    <div className="home-container">
+    <div className="home-container" style={{ backgroundImage: `url(${homeimage})`
+    ,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize:'cover'  }}>
       <Helmet>
         <title>GstGuy</title>
         <meta property="og:title" content="GST Webapp" />
       </Helmet>
 
       <main className="home-main">
+      <div  >
+     
+  
         <div className="section-container">
           <div className="home-max-width max-content-container">
             <div className="home-content-container">
@@ -117,6 +124,7 @@ const Home = (props) => {
               <video className="home-image" controls autoPlay src={video} />
             </div>
           </div>
+        </div>
         </div>
         {/* <div className="home-section-one section-container">
           <div className="home-max-width1 max-content-container"> */}
